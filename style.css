@@ -1,103 +1,132 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-*{
-margin:0;   
-padding:0;
-box-sizing:border-box;
-}  
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
 
-body{
-background:#f7aa05;
-font-family: 'poppins', sans-serif;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.container{
-padding:25px;  
-width:350px;
-background:white;
-position:absolute;
-top:50%;
-left:50%;
-transform:translate(-50%,-50%);
-border-radius:7px;
-transition:all .2s;
+body {
+    background: #f7aa05;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
 
-.container .game-over-box{
-display:none;     
+.container {
+    padding: 25px;
+    width: 90%;
+    max-width: 350px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.2s;
 }
 
-.container .title{
-white-space:nowrap;   
-text-align:center;
-font-size:13px;
+.title {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 15px;
 }
 
-.container .userInput{
-height:70px; 
-width:100%;
-display:flex;
-align-items:center;
-margin-top:15px;
+.user-input {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
 }
 
-.container .userInput input{
-all:unset; 
-height:50px;
-width:150px;
-border:1px solid grey;
-padding-left:15px;
-border-radius:7px;
-font-size:18px;
+.user-input input {
+    all: unset;
+    width: 100px;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    text-align: center;
+    margin-right: 10px;
+    transition: border 0.3s;
 }
 
-.container .userInput button{
-all:unset; 
-height:50px;
-width:150px;
-color:white;
-display:flex;
-align-items:center;
-justify-content:center;
-border-radius:7px;
-margin-left:10px;
-background:#7289DA;
+.user-input input:focus {
+    border-color: #7289DA;
 }
 
-.container .guesses{
-padding:2px;
-margin-top:10px;
-text-align:center;
-font-size:13px;
+.user-input button {
+    all: unset;
+    padding: 10px 20px;
+    background-color: #7289DA;
+    color: white;
+    font-weight: 600;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
 }
 
-.container .guesses p{
-margin-top:7px;        
+.user-input button:hover {
+    background-color: #4e68d6;
 }
 
-.container .guesses .high-to-low{
-display:none;    
-transition:all .2s;
+.feedback {
+    margin-top: 15px;
+    font-size: 0.9rem;
+    color: #555;
 }
 
-.container .game-over-box{
-height:100px;    
+.feedback .hint-message {
+    font-weight: 600;
+    color: #f44336; /* red color for feedback */
+    transition: color 0.3s;
 }
 
-.container .game-over-box h3{
-text-align:center;
-margin-top:10px;
+.feedback .remaining-chances {
+    margin-top: 10px;
 }
 
-.container .game-over-box button{
-all:unset;  
-height:45px;
-width:150px;
-background:#7289DA;
-color:white;
-display:flex;
-justify-content:center;
-align-items:center;
-border-radius:7px;
-margin:auto;
-margin-top:15px;
+.feedback .guessed-numbers {
+    margin-top: 5px;
+    font-size: 0.85rem;
+    color: #333;
+}
+
+.game-over-box {
+    display: none;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.game-over-box h3 {
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.game-over-box button {
+    all: unset;
+    padding: 10px 20px;
+    background: #7289DA;
+    color: white;
+    font-weight: 600;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.game-over-box button:hover {
+    background: #4e68d6;
+}
+
+@media (max-width: 400px) {
+    .container {
+        padding: 20px;
+        width: 100%;
+    }
+    
+    .user-input input,
+    .user-input button {
+        width: 100px;
+    }
 }
